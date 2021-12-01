@@ -1,6 +1,6 @@
-import styled, { createGlobalStyles } from 'styled-components'
+import styled, { createGlobalStyle } from 'styled-components'
 
-const GlobalStyles = createGlobalStyles`
+const GlobalStyles = createGlobalStyle`
 *,
 *::before, 
 *::after{
@@ -18,6 +18,7 @@ html{
   --colour-primary: #E9DDCF;
   --colour-text: #000;
   --colour-secondary: #07424D;
+  --colour-white: #fff;
 
 }
 body{
@@ -26,7 +27,7 @@ body{
   line-height: 1.5;
   letter-spacing: 1.3px;
   font-weight: 400;
-  background-color: var(--colour-secondary);
+  background-color: var(--colour-primary);
   color: var(--colour-text);
 
 }
