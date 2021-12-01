@@ -14,14 +14,32 @@ export const HeroContainer = styled.section`
     right: 0;
     background: linear-gradient(
         100deg,
-        rgba(0, 0, 0, 0.05) 0%,
-        rgba(0, 0, 0, 0.01) 100%
+        rgba(0, 0, 0, 0.1) 0%,
+        rgba(0, 0, 0, 0.2) 100%
       ),
-      linear-gradient(100deg, rgba(0, 0, 0, 0.05) 0%, transparent 100%);
+      linear-gradient(100deg, rgba(0, 0, 0, 0.09) 0%, transparent 100%);
   }
 `
 
-export const HeroContent = styled.div``
+export const HeroContent = styled.div`
+  color: var(--colour-white);
+  position: absolute;
+  z-index: 2000;
+  top: 50%;
+  left: 3%;
+
+  width: 20%;
+  margin-left: 3rem;
+  h1 {
+    font-family: 'Cormorant', serif;
+    font-weight: 600;
+  }
+
+  h2 {
+    font-size: 5rem;
+    font-weight: 300;
+  }
+`
 
 export const HeroBg = styled.div`
   position: absolute;

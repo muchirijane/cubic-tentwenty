@@ -16,7 +16,7 @@ html{
 
 :root{
   --colour-primary: #E9DDCF;
-  --colour-text: #000;
+  --colour-black: #000;
   --colour-secondary: #07424D;
   --colour-white: #fff;
 
@@ -28,7 +28,7 @@ body{
   letter-spacing: 1.3px;
   font-weight: 400;
   background-color: var(--colour-primary);
-  color: var(--colour-text);
+  color: var(--colour-black);
 
 }
 `

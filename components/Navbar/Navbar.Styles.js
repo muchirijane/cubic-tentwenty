@@ -1,29 +1,39 @@
 import styled from 'styled-components'
 
-export const NavbarContainer = styled.Header`
+export const NavbarContainer = styled.header`
   height: 80px;
-  background-color: transparent;
+
+  position: absolute;
+  width: 100vw;
+  z-index: 1000;
+  background-color: ${({ scrollNav }) =>
+    scrollNav ? '#07424D' : 'transparent'};
 `
 
 export const NavbarWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem 2rem;
+  padding: 2rem;
 `
 
 export const NavLogo = styled.div`
   display: flex;
   align-items: center;
+  cursor: pointer;
 
   span {
-    margin-left: 1rem;
+    margin-left: 2rem;
   }
 `
 
 export const NavMenu = styled.menu`
   display: flex;
   align-items: center;
+
+  @media (max-width: 1200px) {
+    display: none;
+  }
 `
 
 export const NavMenuItem = styled.div`
@@ -49,7 +59,7 @@ export const NavIcon = styled.div`
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     color: var(--colour-white);
   }
-  @media (man-width: 768px) {
+  @media (max-width: 1200px) {
     display: block;
   }
 `
@@ -75,4 +85,10 @@ export const NavButton = styled.button`
   background-color: transparent;
   color: var(--colour-white);
   cursor: pointer;
+
+  &:hover {
+    transition: all 0.2s ease;
+    background-color: var(--colour-white);
+    color: var(--colour-black);
+  }
 `
