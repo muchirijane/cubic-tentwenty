@@ -4,7 +4,7 @@ export const NavbarContainer = styled.header`
   height: 80px;
 
   position: absolute;
-  width: 100vw;
+  width: 100%;
   z-index: 1000;
   background-color: ${({ scrollNav }) =>
     scrollNav ? '#07424D' : 'transparent'};
@@ -14,7 +14,7 @@ export const NavbarWrapper = styled.nav`
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 2rem;
+  padding: 2rem 8rem;
 `
 
 export const NavLogo = styled.div`

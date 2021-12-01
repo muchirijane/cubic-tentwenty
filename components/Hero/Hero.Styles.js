@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const HeroContainer = styled.section`
-  height: 80vh;
+  height: 100vh;
   position: relative;
   z-index: 1;
 
@@ -26,7 +26,7 @@ export const HeroContent = styled.div`
   position: absolute;
   z-index: 2000;
   top: 50%;
-  left: 3%;
+  left: 10%;
 
   width: 20%;
   margin-left: 3rem;
