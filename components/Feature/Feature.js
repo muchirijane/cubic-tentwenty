@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Image from 'next/image'
+
 import { FeatureContainer, FeatureItem, FeatureWrapper } from './Feature.Styles'
 
 export default function Feature() {
@@ -51,6 +52,14 @@ export default function Feature() {
         'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
       img: '/featureImg3.png',
       alt: 'Detailed  craftsmanship feature',
+    },
+    {
+      id: '7',
+      title: 'Design Driven',
+      description:
+        'It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. ',
+      img: '/featureImg1.png',
+      alt: 'Design Driven feature',
     },
   ]
   return (
