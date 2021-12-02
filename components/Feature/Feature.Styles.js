@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const FeatureContainer = styled.section`
-  padding: 0 4rem;
+  padding: 0 2rem;
   margin-bottom: 4rem;
 `
 
@@ -43,4 +43,5 @@ export const FeatureItem = styled.div`
     width: 80%;
     margin-bottom: 5rem;
   }
+
 `

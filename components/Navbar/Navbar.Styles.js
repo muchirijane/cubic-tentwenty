@@ -19,7 +19,7 @@ export const NavbarWrapper = styled.nav`
   @media (max-width: 1200px) {
     padding: 2rem 5rem;
   }
-  @media (max-width: 500px) {
+  @media (max-width: 700px) {
     padding: 2rem;
   }
 `
