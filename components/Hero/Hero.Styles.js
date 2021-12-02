@@ -27,8 +27,8 @@ export const HeroContent = styled.div`
   z-index: 2000;
   top: 50%;
   left: 10%;
+  width: 50%;
 
-  width: 20%;
   margin-left: 3rem;
   h1 {
     font-family: 'Cormorant', serif;
@@ -38,6 +38,16 @@ export const HeroContent = styled.div`
   h2 {
     font-size: 5rem;
     font-weight: 300;
+    @media (max-width: 440px) {
+      font-size: 4.2rem;
+    }
+  }
+
+  @media (min-width: 1500px) {
+    width: 30%;
+  }
+  @media (max-width: 700px) {
+    width: 80%;
   }
 `
 

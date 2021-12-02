@@ -51,7 +51,7 @@ export default function Navbar() {
           <Link href="/">
             <Image src="/logo.svg" height={30} width={30} layout="fixed" />
           </Link>
-          <span>Cubic Holdings</span>
+          <span>Cubic LTD</span>
         </NavLogo>
 
         {/* navbar Menu */}

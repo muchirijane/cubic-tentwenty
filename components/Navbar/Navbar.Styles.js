@@ -15,6 +15,13 @@ export const NavbarWrapper = styled.nav`
   align-items: center;
   justify-content: space-between;
   padding: 2rem 8rem;
+
+  @media (max-width: 1200px) {
+    padding: 2rem 5rem;
+  }
+  @media (max-width: 500px) {
+    padding: 2rem;
+  }
 `
 
 export const NavLogo = styled.div`

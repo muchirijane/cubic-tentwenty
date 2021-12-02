@@ -24,4 +24,10 @@ export const InfoSectionText = styled.div`
   }
 `
 
-export const InfoImageWrapper = styled.div``
+export const InfoImageWrapper = styled.div`
+  margin-top: 4rem;
+
+  @media (max-width: 1024px) {
+    margin-top: -5rem;
+  }
+`

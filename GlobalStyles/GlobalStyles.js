@@ -29,7 +29,9 @@ body{
   font-weight: 400;
   background-color: var(--colour-primary);
   color: var(--colour-black);
+  overflow-x: hidden;
 
 }
+
 `
 export default GlobalStyles
