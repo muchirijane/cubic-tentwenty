@@ -14,10 +14,10 @@ export const HeroContainer = styled.section`
     right: 0;
     background: linear-gradient(
         100deg,
-        rgba(0, 0, 0, 0.1) 0%,
-        rgba(0, 0, 0, 0.2) 100%
+        rgba(0, 0, 0, 0.4) 0%,
+        rgba(0, 0, 0, 0.5) 100%
       ),
-      linear-gradient(100deg, rgba(0, 0, 0, 0.09) 0%, transparent 100%);
+      linear-gradient(100deg, rgba(0, 0, 0, 0.3) 0%, transparent 100%);
   }
 `
 

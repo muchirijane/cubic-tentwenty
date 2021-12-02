@@ -3,11 +3,11 @@ import styled from 'styled-components'
 export const NavbarContainer = styled.header`
   height: 80px;
 
-  position: absolute;
+  position: fixed;
   width: 100%;
   z-index: 1000;
   background-color: ${({ scrollNav }) =>
-    scrollNav ? '#07424D' : 'transparent'};
+    scrollNav ? '#07424d' : 'transparent'};
 `
 
 export const NavbarWrapper = styled.nav`
@@ -31,15 +31,27 @@ export const NavLogo = styled.div`
 
   span {
     margin-left: 2rem;
+    color: #fff;
+    svg {
+      color: inherit;
+    }
   }
 `
 
 export const NavMenu = styled.menu`
   display: flex;
   align-items: center;
+  transition: all 0.3s ease-in-out;
 
   @media (max-width: 1200px) {
-    display: none;
+    display: ${({ click }) => (click ? 'block' : 'none')};
+    position: absolute;
+    top: calc(80px - 1rem);
+    background-color: #07424d;
+    color: var(--colour-black);
+    width: 100vw;
+    left: ${({ click }) => (click ? '0' : '-100vw')};
+    padding: 3rem 2rem;
   }
 `
 
@@ -48,6 +60,12 @@ export const NavMenuItem = styled.div`
   align-items: center;
   &:not(:last-child) {
     margin-right: 5rem;
+  }
+  @media (max-width: 1200px) {
+    flex-direction: column;
+    &:not(:last-child) {
+      margin-right: 0rem;
+    }
   }
 `
 
@@ -59,9 +77,15 @@ export const NavLink = styled.a`
   cursor: pointer;
 
   margin-right: 3rem;
+  @media (max-width: 1200px) {
+    display: inline-block;
+    margin-right: 0rem;
+    margin-bottom: 3.4rem;
+  }
 `
 export const NavIcon = styled.div`
   display: none;
+  cursor: pointer;
   svg {
     font-size: clamp(1.5rem, 2.5vw, 2.5rem);
     color: var(--colour-white);

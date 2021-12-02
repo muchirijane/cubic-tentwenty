@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import Image from 'next/image'
-import { animateScroll as scroll } from 'react-scroll'
+
 import { BiSearch, BiMenuAltRight, BiX } from 'react-icons/bi'
 import {
   NavbarContainer,
@@ -23,6 +23,9 @@ export default function Navbar() {
   const menuIconHandler = () => {
     setClick((prevIcon) => !prevIcon)
   }
+  const closeMenuHandler = () => {
+    setClick(false)
+  }
   const changeScrollHandler = () => {
     if (window.scrollY >= 80) {
       setScrollNav(true)
@@ -30,7 +33,6 @@ export default function Navbar() {
       setScrollNav(false)
     }
   }
-
   useEffect(() => {
     window.addEventListener('scroll', changeScrollHandler)
   }, [])
@@ -45,8 +47,8 @@ export default function Navbar() {
     { name: 'Careers', href: '/' },
   ]
   return (
-    <NavbarContainer>
-      <NavbarWrapper scrollNav={scrollNav}>
+    <NavbarContainer scrollNav={scrollNav}>
+      <NavbarWrapper>
         <NavLogo>
           <Link href="/">
             <Image src="/logo.svg" height={30} width={30} layout="fixed" />
@@ -55,12 +57,12 @@ export default function Navbar() {
         </NavLogo>
 
         {/* navbar Menu */}
-        <NavMenu>
+        <NavMenu click={click}>
           <NavMenuItem>
             {navItems1.map((item, index) => (
               <NavMenuLink key={index}>
                 <Link href={item.href}>
-                  <NavLink>{item.name}</NavLink>
+                  <NavLink onClick={closeMenuHandler}>{item.name}</NavLink>
                 </Link>
               </NavMenuLink>
             ))}
@@ -69,7 +71,7 @@ export default function Navbar() {
             {navItems2.map((item, index) => (
               <NavMenuLink key={index}>
                 <Link href={item.href}>
-                  <NavLink>{item.name}</NavLink>
+                  <NavLink onClick={closeMenuHandler}>{item.name}</NavLink>
                 </Link>
               </NavMenuLink>
             ))}

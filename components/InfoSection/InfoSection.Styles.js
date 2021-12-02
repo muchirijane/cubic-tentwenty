@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 export const InfoSectionContainer = styled.section`
   background-color: var(--colour-secondary);
-  padding: 7rem 5rem;
+  padding: 7rem 5rem 0;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
   align-items: center;
