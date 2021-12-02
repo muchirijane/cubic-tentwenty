@@ -1,52 +1,52 @@
-import React, { useRef, useEffect } from "react";
-import { gsap } from "gsap";
+import React, { useRef, useEffect } from 'react'
+import { useIntersection } from 'react-use'
+import gsap from 'gsap'
 import Image from 'next/image'
 import {
   InfoImageWrapper,
   InfoSectionContainer,
   InfoSectionText,
-  InfoSectionWrapper,
 } from './InfoSection.Styles'
 
 export default function InfoSection() {
-  let compRef = useRef(null);
-  const distance = 200;
-  const direction = 'down'
-  const delay = 0;
-  let fadeDirection;
-  switch (direction) {
-    case "left":
-      fadeDirection = { x: -distance };
-      break;
-    case "right":
-      fadeDirection = { x: distance };
-      break;
-    case "up":
-      fadeDirection = { y: distance };
-      break;
-    case "down":
-      fadeDirection = { y: -distance };
-      break;
-    default:
-      fadeDirection = { x: 0 };
+  const sectionRef = useRef(null)
+
+  const intersection = useIntersection(sectionRef, {
+    root: null,
+    rootMargin: '0px',
+    threshold: 0.5,
+  })
+  //Animation for fade in
+  const fadeIn = () => {
+    gsap.to(sectionRef.current, 1, {
+      opacity: 1,
+      y: -80,
+      ease: 'power3.out',
+      stagger: {
+        amount: 0.3,
+      },
+    })
   }
-  useEffect(() => {
-    gsap.from(compRef.current, 1, {
-      ...fadeDirection,
+
+  //Animation for fade out
+  const fadeOut = () => {
+    gsap.to(sectionRef.current, 1, {
       opacity: 0,
-      start: '+=200 70%',
-      end: '+=200 60%',
-      delay,
-    });
-  }, [compRef, fadeDirection]);
+      y: -30,
+      ease: 'power3.out',
+    })
+  }
+
+  //checking if the viewport is visible to the user
+  intersection && intersection.intersectionRatio < 0.5 ? fadeOut() : fadeIn()
   return (
-    <InfoSectionContainer >
-      <InfoSectionText ref={compRef} delay={3}>
-        <h2 >
+    <InfoSectionContainer>
+      <InfoSectionText ref={sectionRef}>
+        <h2>
           Building A Lasting Legacy For Individuals, Families And Businesses
           Globally
         </h2>
-        <p >
+        <p>
           It is a long established fact that a reader will be distracted by the
           readable content of a page when looking at its layout.
         </p>
